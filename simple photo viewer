@@ -1,0 +1,65 @@
+from tkinter import *
+root = Tk()
+
+img = PhotoImage(file='....')
+img0 = PhotoImage(file='....')
+img1 = PhotoImage(file='....
+img2 = PhotoImage(file='....')
+
+l = Label(root, image=img)
+l.grid(row=0, column=0, columnspan=3)
+
+
+def c():
+    l.configure(image=img2)
+    l0.configure(text=img2)
+
+    def c0():
+        l.configure(image=img1)
+        l0.configure(text=img1)
+
+        def c1():
+            l.configure(image=img0)
+            l0.configure(text=img0)
+
+            def c2():
+                l.configure(image=img)
+                l0.configure(text=img)
+
+                b.configure(command=c)
+            b.configure(command=c2)
+        b.configure(command=c1)
+    b.configure(command=c0)
+
+
+def c3():
+    l.configure(image=img0)
+    l0.configure(text=img0)
+
+    def c4():
+        l.configure(image=img1)
+        l0.configure(text=img1)
+
+        def c5():
+            l.configure(image=img2)
+            l0.configure(text=img2)
+
+            def c6():
+                l.configure(image=img)
+                l0.configure(text=img)
+
+                b1.configure(command=c3)
+            b1.configure(command=c6)
+        b1.configure(command=c5)
+    b1.configure(command=c4)
+
+
+b = Button(root, text='<', command=c)
+b.grid(row=1, column=0)
+
+l0 = Label(root, text=img)
+l0.grid(row=1, column=1)
+
+b1 = Button(root, text='>', command=c3)
+b1.grid(row=1, column=2)
+root.mainloop()
